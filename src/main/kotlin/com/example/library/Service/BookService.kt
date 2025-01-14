@@ -10,8 +10,7 @@ import com.example.library.models.Book
 import org.springframework.stereotype.Service
 
 /**
- * Service class for managing books.
- * This class provides methods for CRUD operations on books
+ * Service class for for CRUD operations on books.
  */
 @Service
 class BookService(
@@ -22,18 +21,16 @@ class BookService(
      *
      * @param bookId The ID of the book to retrieve.
      * @return [Book] requested book.
-     * @throws BookNotFoundException If no book is found with the given ID.
      */
     fun getBookById(bookId: Long): Book {
         return bookRepository.findById(bookId).orElseThrow { BookNotFoundException("Book with ID $bookId not found") }
     }
 
     /**
-     * Creates a new book.
+     * Creates a new book if not existing already
      *
      * @param createBookDto  object containing details of the book to be created.
      * @return The newly created book.
-     * @throws DuplicateBookException If a book with the same ISBN already exists.
      */
     fun createBook(createBookDto: CreateBookDto): Book {
         // Check if book already exists
