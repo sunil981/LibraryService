@@ -6,6 +6,11 @@ Features
     -Update an existing book's details.
     -Delete a book by its ID
 
+Some more enchancements possibles:
+- Add logs are appropriate places for debugging
+- Add permission access control on Api's
+
+
  - change database configuration in application.yaml
    - run this to add books table
         CREATE TABLE books (
@@ -16,4 +21,3 @@ Features
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
-
